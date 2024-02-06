@@ -1,6 +1,6 @@
 # WriteSyncPro 
 
-#### [Check Depl0yment Here](https://write-sync-pro.vercel.app/)
+#### [Check Deployment Here](https://write-sync-pro.vercel.app/)
 WriteSyncPro is a collaborative document editing application with real-time synchronization. Users can create, edit, and share documents seamlessly.
 
 ## Features
