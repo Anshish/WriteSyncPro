@@ -18,7 +18,7 @@ const io=socketIO(server,{
         origin:'*',
         methods:['GET','POST']
     }
-});
+}); 
 
 app.use(cors());
 app.use(express.json());
@@ -59,7 +59,7 @@ io.on('connection',(socket)=>{
     })
 })
 
-app.get('/documents',async(req,res)=>{
+app.get('/documents',async(req,res)=>{ 
     try {
         const result=await getDocuments()
         res.json(result);
