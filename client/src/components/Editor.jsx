@@ -44,19 +44,22 @@ const Editor = () => {
 
 
   // Load documents
-  useEffect(()=>{
-    if(socket==null)return
-    socket.on('load-document',document=>{
-      setTitle(document.title)
-      setValue(document.data)
-    })
-    
-    socket.emit('get-document',documentId)
+useEffect(() => {
+  const handleLoadDocument = (document) => {
+    setTitle(document.title);
+    setValue(document.data);
+  };
 
-    return () => {
-      socket.off('load-document', handleLoadDocument);
-    };
-  },[socket,documentId])
+  if (socket == null) return;
+
+  socket.on('load-document', handleLoadDocument);
+  socket.emit('get-document', documentId);
+
+  return () => {
+    socket.off('load-document', handleLoadDocument);
+  };
+}, [socket, documentId]);
+
 
 
 

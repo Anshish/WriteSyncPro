@@ -13,7 +13,6 @@ const pool = new Pool({
 
 const connect=async ()=>{
   try {
-    await pool.connect()
     console.log('Connected to Postgres!');
     try {
       const result=await pool.query('SELECT * from documents')
